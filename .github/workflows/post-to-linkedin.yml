@@ -1,0 +1,32 @@
+name: Post to LinkedIn (Twice Daily)
+
+on:
+  schedule:
+    - cron: "0 5 * * *"   # 11:00 AM IST (5:30 ahead of UTC)
+    - cron: "30 13 * * *" # 7:00 PM IST (1:30 PM UTC)
+  workflow_dispatch:      # Manual run option
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests google-generativeai
+
+      - name: Run script
+        env:
+          GEMINI_API_KEY: ${{ secrets.AIzaSyBPz7vic2EThir4iYE0_bmgeY1JYwa-Gso }}
+          LINKEDIN_ACCESS_TOKEN: ${{ secrets.AQW_6CFPKKcNCVPRqHNrKdS1twAsnpI3pUa4ZyuRiqY3qr9NVCoO-KzpRhNbzbaNkNXSVpzUUATHRqjCcOK2rTYFCAsKVmSJEfc8Y2C0OhGd8fI79jucziWQ3Jnl-tlLQ8fJbMrEDkQQ5CNs1LOsHaDH1WxFYajqT2cQQdByjCV1qf7T8xYCohi2heYai3_4U2fDDpSSpN_YpJ7UzBMHUKD-4_2d0mwnfm1H3gNr32IM-IAMWSfnl-0JPSFjjBVq_JsmsCQwwRA3O0S9o-7OMvaMV0o7V9WuH2uxwGeWQeErFanzXpHtXq64zMlEJRpTN-0362WApu-4zW2SELpWJXT3DlS8cg }}
+          LINKEDIN_URN: ${{ secrets.urn:li:person:67eqmXVQy_ }}
+        run: python uploadLinkedin.py
