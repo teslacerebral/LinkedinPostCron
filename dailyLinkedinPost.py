@@ -8,7 +8,7 @@ model = genai.GenerativeModel("gemini-1.5-flash")
 
 prompt = (
     "Write a short LinkedIn post (under 180 words) about a trending tech topic. "
-    "Use storytelling, psychology and human tone. Avoid technical jargon. Make it feel personal and thought-provoking. make easy english and something beautiful and new also sometime discuss ever green topics"
+    "Use storytelling, psychology and human tone. Avoid technical jargon and make use of easy english and something beautiful and new also sometime discuss ever green topics on Java and SQL and NOSQL but sometime"
 )
 
 response = model.generate_content(prompt)
