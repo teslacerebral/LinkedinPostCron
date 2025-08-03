@@ -29,4 +29,4 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.AIzaSyBPz7vic2EThir4iYE0_bmgeY1JYwa-Gso }}
           LINKEDIN_ACCESS_TOKEN: ${{ secrets.AQW_6CFPKKcNCVPRqHNrKdS1twAsnpI3pUa4ZyuRiqY3qr9NVCoO-KzpRhNbzbaNkNXSVpzUUATHRqjCcOK2rTYFCAsKVmSJEfc8Y2C0OhGd8fI79jucziWQ3Jnl-tlLQ8fJbMrEDkQQ5CNs1LOsHaDH1WxFYajqT2cQQdByjCV1qf7T8xYCohi2heYai3_4U2fDDpSSpN_YpJ7UzBMHUKD-4_2d0mwnfm1H3gNr32IM-IAMWSfnl-0JPSFjjBVq_JsmsCQwwRA3O0S9o-7OMvaMV0o7V9WuH2uxwGeWQeErFanzXpHtXq64zMlEJRpTN-0362WApu-4zW2SELpWJXT3DlS8cg }}
           LINKEDIN_URN: ${{ secrets.urn:li:person:67eqmXVQy_ }}
-        run: python uploadLinkedin.py
+        run: python dailyLinkedinPost.py
