@@ -3,7 +3,7 @@ import requests
 import google.generativeai as genai
 
 # Set up Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
+genai.configure(api_key=os.getenv("GEMINI_API_KEY_ERROR"))
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 prompt = (
@@ -15,7 +15,7 @@ response = model.generate_content(prompt)
 post_text = response.text.strip()
 
 # Set up LinkedIn API
-access_token = os.getenv("LINKEDIN_ACCESS_TOKEN")
+access_token = os.getenv("LINKEDIN_ACCESS_TOKEN_ERROR")
 linkedin_urn = os.getenv("LINKEDIN_URN")
 
 headers = {
