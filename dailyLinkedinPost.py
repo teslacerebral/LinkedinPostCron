@@ -7,7 +7,7 @@ genai.configure(api_key=os.getenv("GEMINI_API_KEY"))
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 prompt = (
-    "Act as a professional tech content creator. Give me a short, engaging LinkedIn post (under 300 words) on a trending Java or software development including Java or Sql or kafka or redis topic today. Make it educational, include a clear insight or takeaway, and ensure it's different from anything already trending on my timeline. Include 3 relevant hashtags."
+    "Give me a short, engaging LinkedIn post (under 300 words) on a trending software development topics . Make it educational, include a clear insight or takeaway, and ensure it's different from anything already trending on my timeline. Include 3 relevant hashtags."
     "Avoid technical jargon and make use of simple english"
 )
 
