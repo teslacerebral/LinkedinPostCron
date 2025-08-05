@@ -3,7 +3,7 @@ import requests
 import google.generativeai as genai
 
 # Set up Gemini
-genai.configure(api_key=os.getenv("GEMINI_API_KEY_ERROR"))
+// genai.configure(api_key=os.getenv("GEMINI_API_KEY_ERROR"))
 model = genai.GenerativeModel("gemini-1.5-flash")
 
 prompt = (
